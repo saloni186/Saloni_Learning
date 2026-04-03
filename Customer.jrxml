@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Customer" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="565d76ad-c8b4-4df0-bc83-f34059f7b656">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.export.xls.wrap.text" value="true"/>
+	<queryString>
+		<![CDATA[SELECT * FROM Customer ]]>
+	</queryString>
+	<field name="IDCUSTOMER" class="java.math.BigDecimal"/>
+	<field name="NAME" class="java.lang.String"/>
+	<field name="Order" class="java.lang.String"/>
+	<field name="TITLE" class="java.lang.String"/>
+	<field name="ACTIVE" class="java.lang.String"/>
+	<variable name="noOfOrder" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$V{noOfOrder}]]></variableExpression>
+	</variable>
+	<variable name="totalNoOfOrder" class="java.lang.String" calculation="Count">
+		<variableExpression><![CDATA[$F{Order}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="202" y="34" width="183" height="20" backcolor="#FFCCCC" uuid="fe8a1d1c-34db-4db3-b08c-ffcd4a6069c9"/>
+				<textElement textAlignment="Center" markup="styled">
+					<font size="13" isBold="true" isItalic="true" isUnderline="true" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[ADDRESS & CUSTOMERS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="361" y="0" width="100" height="20" backcolor="#99FFFF" uuid="d5b2070a-9482-4a71-90d1-2c88704a8b21"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TITLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="261" y="0" width="100" height="20" backcolor="#99FFFF" uuid="1beaf854-a786-47fb-b9b4-ddcf3ed93513"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="161" y="0" width="100" height="20" backcolor="#99FFFF" uuid="252aedf8-0b0a-4698-aad3-a594b3f3357f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAME]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="361" y="0" width="100" height="20" uuid="36564b99-2fe8-4e61-ac27-a6080e7e53b6"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{TITLE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="261" y="0" width="100" height="20" uuid="5c7cc744-c7d0-4890-a2dc-8cdeae98b0c2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{Order}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="161" y="0" width="100" height="20" uuid="932ba1cd-6ee4-4938-ad77-708f3dbd3c75"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="273" y="20" width="100" height="20" uuid="8efef629-72e7-4cd4-b5aa-4afe59ceb0cc"/>
+				<textFieldExpression><![CDATA[total no. of order]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="373" y="20" width="100" height="21" uuid="37bfc707-2d94-460c-9011-fde2d6d78ff6"/>
+				<textFieldExpression><![CDATA[$V{totalNoOfOrder}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="85" splitType="Stretch"/>
+	</summary>
+	<noData>
+		<band height="50">
+			<staticText>
+				<reportElement x="260" y="12" width="100" height="20" uuid="19bd989e-a91e-4b70-89ec-c10bffcb7c7d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[sorry, no data found]]></text>
+			</staticText>
+		</band>
+	</noData>
+</jasperReport>
